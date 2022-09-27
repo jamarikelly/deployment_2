@@ -13,21 +13,7 @@ pipeline {
         '''
      }
    }
-    stage ('test') {
-      steps {
-        sh '''#!/bin/bash
-        source test3/bin/activate
-        py.test --verbose --junit-xml test-reports/results.xml
-        ''' 
-      }
     
-      post{
-        always {
-          junit 'test-reports/results.xml'
-        }
-       
-      }
-    }
      stage ('test') {
       steps {
        echo "HELLO!"

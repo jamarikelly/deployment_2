@@ -28,6 +28,11 @@ pipeline {
        
       }
     }
+     stage ('test') {
+      steps {
+       echo "HELLO!"
+      }
+     }
      stage ('Deploy') {
        steps {
          sh '/var/lib/jenkins/.local/bin/eb deploy workspace-dev'

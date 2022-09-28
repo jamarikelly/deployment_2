@@ -16,13 +16,17 @@ pipeline {
     
      stage ('test') {
       steps {
-       echo "HELLO!"
+        sh '''#!/bin/bash
+        source test3/bin/activate
+        py.test --verbose --junit-xml test-reports/results.xml
+        ''' 
       }
-     }
-     stage ('Deploy') {
-       steps {
-         sh '/var/lib/jenkins/.local/bin/eb deploy workspace-dev'
-       }
+    
+      post{
+        always {
+          junit 'test-reports/results.xml'
+        }
      }
   }
  }
+}

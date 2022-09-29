@@ -27,7 +27,16 @@ pipeline {
           junit 'test-reports/results.xml'
         }
      }
-  }
-     
+  }  
+     stage ('Deploy') {
+       steps {
+         sh '/var/lib/jenkins/.local/bin/eb deploy Deploy2-main-dev'
+       }
+     }
+      stage('Test2'){
+      steps{
+          echo "Testing"
+      }
+      }
  }
 }

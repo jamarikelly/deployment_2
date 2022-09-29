@@ -98,4 +98,5 @@ eb create
       }
  }
 ```
+10. Finally, scan repository again, now both the "Deploy" and "test2" stages will be shown.
 

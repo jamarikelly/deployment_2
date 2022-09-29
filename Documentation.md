@@ -29,4 +29,29 @@ sudo su - jenkins -s /bin/bash
 - Felect "attach existing policies directly" and select administrator access. Now select Next for this page and the other as well.
 - Finally, create the user, keep that window open because you will come return to this window for the access key and secret access keys thats generated.
 
+5. install AWS CLI on the jenkins EC2 and configure using commands below.
+```
+sudo su jenkins 
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt install unzip
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version (checking if aws is installed)
+aws configure (go back to the IAM window, copy and paste the keys as promped); region set to us-east-1 ; format: json
+```
+6. install EB cli in the jenkins ec2 using commands below:
+```
+sudo apt install python3-pip
+pip install awsebcli --upgrade --user
+export PATH=$PATH:~/.local/bin
+eb --version
+```
+7. Connecting Github to Jenkins Server:
+
+- Fork the deployment repo firstly. https://github.com/kura-labs-org/kuralabs_deployment_2.git
+- Create access token from github by navigating to github settings, select developer settings.
+- select personal access token and create a new token; select "Repo" and "admin:repo_hook" for the token's permissions 
+
+- Log back into the jenkins and select "New Item"
+- 
 

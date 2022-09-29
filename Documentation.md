@@ -83,3 +83,19 @@ eb create
 * Press enter to take the default settings for the first three prompts
 * spot fleet: N
 * environment being made, go to elastics beanstalk in aws console  to look at the environment being created. 
+
+9. Add deployment stage and also another tes to the pipeline in jenkinsfile, shown below:
+```
+ stage ('Deploy') {
+       steps {
+         sh '/var/lib/jenkins/.local/bin/eb deploy Deploy2-main-dev'
+       }
+     }
+      stage('Test2'){
+      steps{
+          echo "Testing"
+      }
+      }
+ }
+```
+

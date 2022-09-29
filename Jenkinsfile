@@ -33,5 +33,10 @@ pipeline {
          sh '/var/lib/jenkins/.local/bin/eb deploy deployment2-main-dev'
        }
      }
+      stage('Test2'){
+      steps{
+          echo "Testing"
+      }
+    }
  }
 }

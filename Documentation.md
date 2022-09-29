@@ -53,5 +53,33 @@ eb --version
 - select personal access token and create a new token; select "Repo" and "admin:repo_hook" for the token's permissions 
 
 - Log back into the jenkins and select "New Item"
-- 
+- Select multibranch pipeline
+- Enter a display name and brief description of what youre doing 
+- Add a branch source by selecting add source and select github
+- Select the add button and select Github
+- Click on add and then select jenkins 
+- Under the username, enter your github username 
+- Under password, enter the token copied from github
+- Enter your url to the repository and you can validate by selecting validate.
+- After its validated, click apply then save.
+- You should see the build happening, if not, scan the repository.
 
+8. Time to deploy application from elastic beanstalk CLI.
+```
+sudo su - jenkins -s /bin/bash
+cd /var/workspace/deployment.main/
+eb init 
+```
+- after the "eb init" command, you'll be prompted, the reply to the prompts are:
+* select: us-east-1
+* press enter
+* select: python
+* select the latest version of python
+* select N for the (codecommit)
+* do command below then follow prompts again
+```
+eb create
+```
+* Press enter to take the default settings for the first three prompts
+* spot fleet: N
+* environment being made, go to elastics beanstalk in aws console  to look at the environment being created. 

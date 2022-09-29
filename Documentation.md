@@ -23,10 +23,10 @@ usermod -aG sudo username
 sudo su - jenkins -s /bin/bash
 ```
 4. create jenkins user in aws account using the steps below.
-```
-Search for IAM in aws console search bar, click on it. Next click on user in Access management 
-Select add user and enter the name of user you want, then select programmic access and select next.
-Felect "attach existing policies directly" and select administrator access. Now select Next for this page and the other as well.
-Finally, create the user, keep that window open because you will come return to this window for the access key and secret access keys thats generated.
 
-```
+- Search for IAM in aws console search bar, click on it. Next click on user in Access management 
+- Select add user and enter the name of user you want, then select programmic access and select next.
+- Felect "attach existing policies directly" and select administrator access. Now select Next for this page and the other as well.
+- Finally, create the user, keep that window open because you will come return to this window for the access key and secret access keys thats generated.
+
+

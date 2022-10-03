@@ -99,4 +99,5 @@ eb create
  }
 ```
 10. Finally, scan repository again, now both the "Deploy" and "test2" stages will be shown.
+11. Go to this address to see images of the deployment 👉 https://github.com/jamarikelly/kuralabs_deployment_2/blob/main/images_d2.pdf
 
